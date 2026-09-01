@@ -1,0 +1,988 @@
+[index (3).html](https://github.com/user-attachments/files/31674558/index.3.html)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mudanças, Carretos e Fretes | Atendimento em todo o Brasil</title>
+
+<!--
+  ===========================================================================
+  COMO EDITAR ESTE SITE (leia isto primeiro!)
+  ===========================================================================
+  1) Número de WhatsApp: já configurado como (11) 94616-7061.
+     Se precisar trocar, procure por "5511946167061" no arquivo.
+
+  2) Fotos e vídeos: procure pela seção "GALERIA" mais abaixo neste arquivo.
+     Cada quadro tem um comentário indicando onde trocar a imagem.
+
+  3) Calendário de disponibilidade: procure "CONFIGURAÇÃO DO CALENDÁRIO"
+     no bloco de JavaScript, no final do arquivo. Lá você marca quais dias
+     estão ocupados.
+
+  4) Cores e textos: os nomes das seções estão em comentários em português
+     ao longo do arquivo, facilitando encontrar o que você quer mudar.
+  ===========================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #EFEAE1;
+    --paper-dark: #E4DDCE;
+    --ink: #1C2B26;
+    --ink-soft: #3A4A43;
+    --amber: #D97706;
+    --amber-dark: #B45F04;
+    --route-green: #3F6B4F;
+    --rust: #6E1F2A;
+    --border: #C9C0AF;
+    --white: #FBF9F5;
+
+    --font-display: 'Big Shoulders Display', sans-serif;
+    --font-body: 'Work Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { display: block; max-width: 100%; }
+
+  a { color: inherit; text-decoration: none; }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 0.2px;
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Divisor "faixa de pista" — motivo visual recorrente do site */
+  .road-divider {
+    width: 100%;
+    height: 0;
+    border-top: 3px dashed var(--border);
+  }
+
+  /* -------------------- CABEÇALHO -------------------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--paper);
+    border-bottom: 3px dashed var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: #111111;
+  }
+  .logo span { color: var(--rust); }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .nav-links a:hover { color: var(--amber-dark); }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 13px 26px;
+    border-radius: 3px;
+    border: 2px solid var(--ink);
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: var(--ink);
+    border-color: var(--amber);
+  }
+  .btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+  .header-cta { display: flex; gap: 12px; align-items: center; }
+  .btn-small { padding: 10px 18px; font-size: 14px; }
+
+  @media (max-width: 820px) {
+    .nav-links { display: none; }
+  }
+
+  /* -------------------- HERO -------------------- */
+  .hero {
+    position: relative;
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+    padding-bottom: 80px;
+  }
+
+  .hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 90px 24px 60px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-weight: 600;
+    color: var(--amber);
+    font-size: 15px;
+    margin-bottom: 18px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    color: var(--white);
+    margin-bottom: 22px;
+  }
+
+  .hero p.lead {
+    font-size: 19px;
+    color: var(--paper-dark);
+    max-width: 46ch;
+    margin-bottom: 34px;
+  }
+
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .hero-figure {
+    border: 3px dashed rgba(239,234,225,0.35);
+    border-radius: 4px;
+    padding: 28px;
+    background: rgba(239,234,225,0.05);
+  }
+
+  .hero-cover {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+
+  .hero-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .route-line {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .route-stop {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .route-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--amber);
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .route-stop strong { display: block; font-size: 16px; color: var(--white); }
+  .route-stop span { font-size: 14px; color: var(--paper-dark); }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+  }
+
+  /* -------------------- SERVIÇOS -------------------- */
+  section { padding: 84px 0; }
+
+  .section-head { max-width: 640px; margin-bottom: 48px; }
+
+  .section-eyebrow {
+    font-weight: 700;
+    color: var(--amber-dark);
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--ink);
+  }
+
+  .section-head p {
+    margin-top: 14px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--paper);
+    padding: 32px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .service-icon {
+    width: 42px;
+    height: 42px;
+    color: var(--amber-dark);
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+    color: var(--ink);
+    text-transform: none;
+  }
+
+  .service-card p { font-size: 14.5px; color: var(--ink-soft); }
+
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  /* -------------------- ORÇAMENTO (formulário) -------------------- */
+  .quote-section {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .quote-section .section-eyebrow { color: var(--amber); }
+  .quote-section .section-head h2 { color: var(--white); }
+  .quote-section .section-head p { color: var(--paper-dark); }
+
+  .quote-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .quote-perks { display: flex; flex-direction: column; gap: 26px; }
+
+  .perk { display: flex; gap: 16px; }
+  .perk-mark {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--amber);
+    width: 40px;
+    flex-shrink: 0;
+  }
+  .perk strong { display: block; color: var(--white); font-size: 17px; margin-bottom: 4px; }
+  .perk span { color: var(--paper-dark); font-size: 14.5px; }
+
+  form {
+    background: var(--paper);
+    border-radius: 6px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--border);
+    border-radius: 3px;
+    background: var(--white);
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--amber);
+  }
+
+  .form-submit {
+    margin-top: 6px;
+    width: 100%;
+    background: var(--amber);
+    border-color: var(--amber);
+    color: var(--ink);
+    font-size: 16px;
+    padding: 15px;
+  }
+  .form-submit:hover { background: var(--amber-dark); }
+
+  @media (max-width: 900px) {
+    .quote-layout { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* -------------------- CALENDÁRIO -------------------- */
+  .calendar-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .calendar-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+  }
+
+  .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .calendar-header h3 {
+    font-size: 24px;
+    text-transform: capitalize;
+    color: var(--ink);
+  }
+
+  .cal-nav { display: flex; gap: 8px; }
+  .cal-nav button {
+    width: 34px; height: 34px;
+    border: 2px solid var(--ink);
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 700;
+  }
+  .cal-nav button:hover { background: var(--ink); color: var(--paper); }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+
+  .cal-dow {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    padding-bottom: 6px;
+  }
+
+  .cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  .cal-day.empty { visibility: hidden; }
+  .cal-day.available { background: rgba(63,107,79,0.14); color: var(--route-green); border: 1.5px solid var(--route-green); }
+  .cal-day.busy { background: rgba(110,31,42,0.1); color: var(--rust); border: 1.5px solid var(--rust); text-decoration: line-through; }
+  .cal-day.today { box-shadow: 0 0 0 2px var(--amber) inset; }
+
+  .cal-legend { display: flex; gap: 20px; margin-top: 18px; flex-wrap: wrap; }
+  .cal-legend-item { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-soft); }
+  .cal-legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+
+  @media (max-width: 900px) {
+    .calendar-wrap { grid-template-columns: 1fr; }
+  }
+
+  /* -------------------- GALERIA -------------------- */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .gallery-slot {
+    aspect-ratio: 4/3;
+    border: 3px dashed var(--border);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--ink-soft);
+    text-align: center;
+    padding: 20px;
+    background: var(--paper-dark);
+  }
+
+  .gallery-slot span.label { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .gallery-slot span.hint { font-size: 12.5px; }
+
+  .gallery-slot.filled {
+    border-style: solid;
+    padding: 0;
+    background: var(--ink);
+  }
+  .gallery-slot.filled img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+
+  /* -------------------- COBERTURA -------------------- */
+  .coverage-section { background: var(--paper-dark); }
+
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .coverage-col h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--amber-dark);
+    margin-bottom: 14px;
+    text-transform: none;
+  }
+
+  .coverage-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .coverage-col li { font-size: 14.5px; color: var(--ink-soft); }
+
+  @media (max-width: 900px) {
+    .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* -------------------- RODAPÉ -------------------- */
+  footer {
+    background: var(--ink);
+    color: var(--paper-dark);
+    padding: 56px 0 32px;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(239,234,225,0.15);
+    margin-bottom: 24px;
+  }
+
+  .footer-logo { font-family: var(--font-display); font-size: 26px; color: var(--white); }
+  .footer-logo span { color: var(--rust); }
+
+  .footer-bio { max-width: 40ch; font-size: 14px; margin-top: 10px; }
+
+  .footer-contact { display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; }
+  .footer-contact a:hover { color: var(--amber); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgba(239,234,225,0.5);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* -------------------- BOTÃO FLUTUANTE WHATSAPP -------------------- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--route-green);
+    color: var(--white);
+    padding: 14px 20px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: transform 0.15s ease;
+  }
+  .whatsapp-float:hover { transform: translateY(-3px); }
+  .whatsapp-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  @media (max-width: 560px) {
+    .whatsapp-float span.wa-text { display: none; }
+    .whatsapp-float { padding: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =========================== CABEÇALHO =========================== -->
+<header>
+  <div class="header-inner">
+    <div class="logo">3L <span>Transporte</span></div>
+    <nav class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#galeria">Trabalhos</a>
+      <a href="#cobertura">Cobertura</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#orcamento" class="btn btn-primary btn-small">Pedir orçamento</a>
+    </div>
+  </div>
+</header>
+
+<!-- =========================== HERO =========================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Mudanças · Carretos · Fretes</div>
+      <h1>Sua mudança,<br>de ponta a ponta<br>do Brasil.</h1>
+      <p class="lead">
+        Atendimento para todo o Brasil — capitais, Litoral e Interior de São Paulo,
+        e demais Estados. Equipe própria, carga segurada e um orçamento sem enrolação.
+      </p>
+      <div class="hero-ctas">
+        <a href="#orcamento" class="btn btn-primary">Pedir orçamento grátis</a>
+        <a href="https://wa.me/5511946167061" target="_blank" class="btn btn-outline" style="color:var(--paper); border-color:var(--paper);">Falar no WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Imagem oficial da marca, enviada pelo cliente -->
+    <div class="hero-cover">
+      <img src="capa-3l-transporte.jpeg" alt="3L Transporte — caminhão de mudanças, fretes e carretos">
+    </div>
+  </div>
+</section>
+
+<!-- =========================== SERVIÇOS =========================== -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">O que fazemos</div>
+      <h2>Serviços</h2>
+      <p>Do carreto rápido à mudança interestadual completa — tudo com o mesmo cuidado.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="13" height="9"/><path d="M16 12h3l2 3v3h-5z"/><circle cx="7.5" cy="20" r="1.6"/><circle cx="17.5" cy="20" r="1.6"/></svg>
+        <h3>Mudança residencial</h3>
+        <p>Casas e apartamentos, com embalagem cuidadosa dos seus móveis e itens frágeis.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M3 10h18"/><path d="M8 4v6"/></svg>
+        <h3>Mudança comercial</h3>
+        <p>Escritórios, lojas e depósitos, com o menor tempo de parada possível.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18"/><path d="M13 5l7 7-7 7"/></svg>
+        <h3>Mudança interestadual</h3>
+        <p>Rotas para todas as capitais e principais cidades do Brasil.</p>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="11" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        <h3>Carretos e fretes</h3>
+        <p>Para quando você precisa transportar poucos itens, com rapidez e preço justo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="road-divider"></div>
+
+<!-- =========================== ORÇAMENTO =========================== -->
+<section id="orcamento" class="quote-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Sem compromisso</div>
+      <h2>Peça seu orçamento</h2>
+      <p>Preencha os dados abaixo e envie direto para o nosso WhatsApp — respondemos rápido.</p>
+    </div>
+
+    <div class="quote-layout">
+      <div class="quote-perks">
+        <div class="perk">
+          <div class="perk-mark">01</div>
+          <div>
+            <strong>Resposta rápida</strong>
+            <span>Seu pedido chega direto no nosso WhatsApp, sem espera de e-mail.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-mark">02</div>
+          <div>
+            <strong>Sem letras miúdas</strong>
+            <span>Orçamento claro, sem taxas escondidas depois da mudança.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-mark">03</div>
+          <div>
+            <strong>Cobertura nacional</strong>
+            <span>Atendemos todas as capitais, o Litoral e o Interior de SP, e demais Estados.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário: ao enviar, monta uma mensagem e abre o WhatsApp -->
+      <form id="quote-form">
+        <div class="form-row">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" required placeholder="Seu nome completo">
+          </div>
+          <div>
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" required placeholder="(11) 90000-0000">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="origem">Cidade de origem</label>
+            <input type="text" id="origem" required placeholder="De onde sai">
+          </div>
+          <div>
+            <label for="destino">Cidade de destino</label>
+            <input type="text" id="destino" required placeholder="Para onde vai">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="tipo">Tipo de mudança</label>
+            <select id="tipo">
+              <option>Residencial</option>
+              <option>Comercial</option>
+              <option>Carreto/Frete avulso</option>
+            </select>
+          </div>
+          <div>
+            <label for="data">Data desejada</label>
+            <input type="date" id="data">
+          </div>
+        </div>
+        <button type="submit" class="btn form-submit">Enviar orçamento pelo WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== CALENDÁRIO / AGENDA =========================== -->
+<section id="agenda">
+  <div class="container">
+    <div class="calendar-wrap">
+      <div>
+        <div class="section-head" style="margin-bottom:24px;">
+          <div class="section-eyebrow">Disponibilidade</div>
+          <h2>Dias para agendamento</h2>
+          <p>Veja os dias já ocupados e escolha uma data livre para a sua mudança. Depois, confirme pelo WhatsApp.</p>
+        </div>
+        <div class="quote-perks">
+          <div class="perk">
+            <div class="perk-mark">→</div>
+            <div>
+              <strong>Como funciona</strong>
+              <span>Dias em verde estão livres. Dias em vermelho já têm mudança marcada. Escolha um dia livre e nos chame no WhatsApp para confirmar o horário.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calendar-card">
+        <div class="calendar-header">
+          <h3 id="cal-month-label">Mês</h3>
+          <div class="cal-nav">
+            <button id="cal-prev" aria-label="Mês anterior">‹</button>
+            <button id="cal-next" aria-label="Próximo mês">›</button>
+          </div>
+        </div>
+        <div class="cal-grid" id="cal-dow-row">
+          <div class="cal-dow">Dom</div><div class="cal-dow">Seg</div><div class="cal-dow">Ter</div>
+          <div class="cal-dow">Qua</div><div class="cal-dow">Qui</div><div class="cal-dow">Sex</div><div class="cal-dow">Sáb</div>
+        </div>
+        <div class="cal-grid" id="cal-days"></div>
+        <div class="cal-legend">
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--route-green);"></span> Disponível</div>
+          <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--rust);"></span> Ocupado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="road-divider"></div>
+
+<!-- =========================== GALERIA =========================== -->
+<section id="galeria">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Nosso trabalho</div>
+      <h2>Fotos e vídeos</h2>
+      <p>Substitua os quadros abaixo pelas suas próprias fotos e vídeos — é só trocar o conteúdo de cada bloco no código.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <!-- Cada bloco abaixo é um espaço reservado. Troque por <img src="sua-foto.jpg"> ou <video> -->
+      <div class="gallery-slot filled"><img src="capa-3l-transporte.jpeg" alt="3L Transporte — fretes, carretos e mudanças"></div>
+      <div class="gallery-slot filled"><img src="fretes-mudancas-bau.jpeg" alt="Fretes e mudanças com caminhão baú, atendimento em todo o Brasil"></div>
+      <div class="gallery-slot"><span class="label">Vídeo 1</span><span class="hint">Substitua por um vídeo curto</span></div>
+      <div class="gallery-slot"><span class="label">Foto 3</span><span class="hint">Substitua por uma foto do seu trabalho</span></div>
+      <div class="gallery-slot"><span class="label">Foto 4</span><span class="hint">Substitua por uma foto do seu trabalho</span></div>
+      <div class="gallery-slot"><span class="label">Vídeo 2</span><span class="hint">Substitua por um vídeo curto</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== COBERTURA =========================== -->
+<section id="cobertura" class="coverage-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Onde atendemos</div>
+      <h2>Cobertura em todo o Brasil</h2>
+    </div>
+
+    <div class="coverage-grid">
+      <div class="coverage-col">
+        <h3>São Paulo — Capital</h3>
+        <ul>
+          <li>Zona Sul, Zona Norte</li>
+          <li>Zona Leste, Zona Oeste</li>
+          <li>Centro e região da ABC</li>
+        </ul>
+      </div>
+      <div class="coverage-col">
+        <h3>São Paulo — Litoral</h3>
+        <ul>
+          <li>Santos e Baixada Santista</li>
+          <li>Litoral Norte</li>
+          <li>Litoral Sul</li>
+        </ul>
+      </div>
+      <div class="coverage-col">
+        <h3>São Paulo — Interior</h3>
+        <ul>
+          <li>Campinas e região</li>
+          <li>Ribeirão Preto e região</li>
+          <li>Demais cidades do Interior</li>
+        </ul>
+      </div>
+      <div class="coverage-col">
+        <h3>Demais Estados</h3>
+        <ul>
+          <li>Todas as capitais do Brasil</li>
+          <li>Principais cidades de cada Estado</li>
+          <li>Consulte sua região</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================== RODAPÉ =========================== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">3L <span>Transporte</span></div>
+        <p class="footer-bio">Mudanças, Carretos e Fretes. Atendimento para todo o Brasil — todas as capitais, São Paulo (Litoral e Interior) e demais Estados.</p>
+      </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/5511946167061" target="_blank">WhatsApp</a>
+        <a href="#orcamento">Pedir orçamento</a>
+        <a href="#agenda">Ver disponibilidade</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 3L Transporte — Mudanças, Carretos e Fretes.</span>
+      <span>Atendimento: capitais · Litoral SP · Interior SP · demais Estados</span>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================== BOTÃO FLUTUANTE WHATSAPP =========================== -->
+<a href="https://wa.me/5511946167061" target="_blank" class="whatsapp-float">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.3c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.41a8.16 8.16 0 0 1 2.41 5.82c0 4.53-3.69 8.22-8.23 8.22zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.24-.85.83-.85 2.03s.87 2.35 1 2.51c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+  <span class="wa-text">WhatsApp</span>
+</a>
+
+<script>
+  // ===========================================================================
+  // FORMULÁRIO DE ORÇAMENTO → envia os dados para o WhatsApp
+  // ===========================================================================
+  const WHATSAPP_NUMERO = "5511946167061"; // <-- troque aqui também, se preferir centralizar
+
+  document.getElementById('quote-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value;
+    const telefone = document.getElementById('telefone').value;
+    const origem = document.getElementById('origem').value;
+    const destino = document.getElementById('destino').value;
+    const tipo = document.getElementById('tipo').value;
+    const data = document.getElementById('data').value;
+
+    const mensagem =
+      `Olá! Gostaria de um orçamento de mudança.%0A` +
+      `Nome: ${nome}%0A` +
+      `Telefone: ${telefone}%0A` +
+      `Origem: ${origem}%0A` +
+      `Destino: ${destino}%0A` +
+      `Tipo: ${tipo}%0A` +
+      `Data desejada: ${data || 'a combinar'}`;
+
+    window.open(`https://wa.me/${WHATSAPP_NUMERO}?text=${mensagem}`, '_blank');
+  });
+
+  // ===========================================================================
+  // CALENDÁRIO DE DISPONIBILIDADE
+  // ===========================================================================
+  // CONFIGURAÇÃO DO CALENDÁRIO:
+  // Adicione aqui as datas já OCUPADAS, no formato "AAAA-MM-DD".
+  // Todo dia que não estiver nesta lista (e não for no passado) aparece como disponível.
+  const DIAS_OCUPADOS = [
+    // Exemplo — substitua pelas suas datas reais:
+    "2026-09-05", "2026-09-06", "2026-09-14", "2026-09-15",
+    "2026-09-21", "2026-09-28", "2026-10-03", "2026-10-04"
+  ];
+
+  const meses = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+  let calDate = new Date();
+  calDate.setDate(1);
+
+  function formatarChave(d) {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  function renderCalendario() {
+    const label = document.getElementById('cal-month-label');
+    const grid = document.getElementById('cal-days');
+    label.textContent = `${meses[calDate.getMonth()]} de ${calDate.getFullYear()}`;
+    grid.innerHTML = '';
+
+    const primeiroDiaSemana = new Date(calDate.getFullYear(), calDate.getMonth(), 1).getDay();
+    const totalDias = new Date(calDate.getFullYear(), calDate.getMonth() + 1, 0).getDate();
+    const hoje = new Date();
+    hoje.setHours(0,0,0,0);
+
+    for (let i = 0; i < primeiroDiaSemana; i++) {
+      const vazio = document.createElement('div');
+      vazio.className = 'cal-day empty';
+      grid.appendChild(vazio);
+    }
+
+    for (let dia = 1; dia <= totalDias; dia++) {
+      const dataAtual = new Date(calDate.getFullYear(), calDate.getMonth(), dia);
+      const chave = formatarChave(dataAtual);
+      const el = document.createElement('div');
+      el.className = 'cal-day';
+      el.textContent = dia;
+
+      if (dataAtual.getTime() === hoje.getTime()) el.classList.add('today');
+
+      if (dataAtual < hoje) {
+        el.style.opacity = '0.35';
+      } else if (DIAS_OCUPADOS.includes(chave)) {
+        el.classList.add('busy');
+      } else {
+        el.classList.add('available');
+      }
+
+      grid.appendChild(el);
+    }
+  }
+
+  document.getElementById('cal-prev').addEventListener('click', () => {
+    calDate.setMonth(calDate.getMonth() - 1);
+    renderCalendario();
+  });
+  document.getElementById('cal-next').addEventListener('click', () => {
+    calDate.setMonth(calDate.getMonth() + 1);
+    renderCalendario();
+  });
+
+  renderCalendario();
+</script>
+
+</body>
+</html>
